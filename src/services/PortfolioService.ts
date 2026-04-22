@@ -7,9 +7,9 @@ const MOCK_DATA: PortfolioData = {
     title: 'IT Application Support & Site Reliability Engineer',
     tagline: 'Reliability-focused problem solver. Ensuring system stability, minimizing MTTR, and driving operational excellence.',
     about: 'I am a seasoned IT professional with over 7 years of experience in the banking sector. My expertise lies in maintaining high-availability financial systems, rapidly resolving production incidents, and optimizing system performance. I bridge the gap between development and operations by implementing robust monitoring, scripting automation, and ensuring strict compliance with regulatory reporting standards (e.g., OJK). I approach complex technical challenges with a calm, methodical, and SRE-driven mindset.',
-    email: 'hendra.prasetyo@example.com',
-    linkedin: 'https://linkedin.com/in/hendra-prasetyo',
-    github: 'https://github.com/hendra-prasetyo'
+    email: 'hendraprasetyo94@gmail.com',
+    linkedin: 'https://www.linkedin.com/in/hendra-prasetyoo/',
+    github: 'https://github.com/hendra-p'
   },
   skills: [
     { name: 'Linux Administration', category: 'Technical' },
