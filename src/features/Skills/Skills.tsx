@@ -5,7 +5,7 @@ import { Card, CardContent } from '../../components/Card/Card';
 
 export const Skills: React.FC = () => {
   const skills = usePortfolioService().getSkills();
-  
+
   // Group skills by category
   const groupedSkills = skills.reduce((acc, skill) => {
     if (!acc[skill.category]) {
@@ -16,7 +16,7 @@ export const Skills: React.FC = () => {
   }, {} as Record<string, string[]>);
 
   return (
-    <Section id="skills" title="Technical Arsenal" className="bg-surface/30">
+    <Section id="skills" title="Technical Skills" className="bg-surface/30">
       <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
         {Object.entries(groupedSkills).map(([category, items]) => (
           <Card key={category} className="bg-background/50 border-slate-700/50">
