@@ -25,6 +25,7 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
     { name: 'Experience', href: '#experience' },
     { name: 'Skills', href: '#skills' },
     { name: 'Case Studies', href: '#projects' },
+    { name: 'Live Demo', href: '#live-demo' },
     { name: 'Contact', href: '#contact' },
   ];
 

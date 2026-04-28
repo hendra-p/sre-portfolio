@@ -67,6 +67,17 @@ const MOCK_DATA: PortfolioData = {
       solution: 'Analyzed middleware bottlenecks, tuned connection pools, and established strict retry policies.',
       impact: 'Zero transaction drops during the following peak season, ensuring high reliability for customer funds.',
       tags: ['Middleware', 'API', 'Troubleshooting', 'SQL']
+    },
+    {
+      id: 'proj3',
+      title: 'InfraMonitor: Agent-Based Observability [LIVE DEMO]',
+      description: 'A full-stack infrastructure monitoring system with real-time agent, API, and interactive dashboard.',
+      problem: 'Lack of real-time visibility into local infrastructure performance and anomaly detection.',
+      solution: 'Developed a Python-based monitoring agent that streams system metrics to a FastAPI backend, visualized through a React dashboard with threshold-based alerting.',
+      impact: 'Provides real-time health insights for system components with automated RCA (Root Cause Analysis).',
+      tags: ['SRE', 'Python', 'FastAPI', 'React', 'PostgreSQL'],
+      hasLiveDemo: true,
+      demoSectionId: 'live-demo'
     }
   ]
 };

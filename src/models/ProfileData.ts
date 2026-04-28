@@ -20,6 +20,8 @@ export interface Project {
   solution: string;
   impact: string;
   tags: string[];
+  hasLiveDemo?: boolean;
+  demoSectionId?: string;
 }
 
 export interface Profile {

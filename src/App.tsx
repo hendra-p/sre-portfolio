@@ -6,6 +6,7 @@ import { About } from './features/About/About'
 import { Experience } from './features/Experience/Experience'
 import { Skills } from './features/Skills/Skills'
 import { Projects } from './features/Projects/Projects'
+import LiveDemo from './features/LiveDemo/LiveDemo'
 import { Contact } from './features/Contact/Contact'
 
 function App() {
@@ -18,6 +19,7 @@ function App() {
         <Experience />
         <Skills />
         <Projects />
+        <LiveDemo />
         <Contact />
       </MainLayout>
     </PortfolioProvider>
