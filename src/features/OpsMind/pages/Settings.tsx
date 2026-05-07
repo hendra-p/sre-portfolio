@@ -10,6 +10,16 @@ import {
 } from 'lucide-react';
 
 export const Settings: React.FC = () => {
+  const [activeTab, setActiveTab] = React.useState('Profile');
+
+  const tabs = [
+    { label: 'Profile', icon: User },
+    { label: 'Notifications', icon: Bell },
+    { label: 'Security', icon: Shield },
+    { label: 'Integrations', icon: Database },
+    { label: 'General', icon: Globe },
+  ];
+
   return (
     <div className="space-y-8 animate-in fade-in duration-500">
       <div>
@@ -19,55 +29,56 @@ export const Settings: React.FC = () => {
 
       <div className="grid grid-cols-1 lg:grid-cols-4 gap-8">
         <div className="lg:col-span-1 space-y-1">
-          {[
-            { label: 'Profile', icon: User, active: true },
-            { label: 'Notifications', icon: Bell },
-            { label: 'Security', icon: Shield },
-            { label: 'Integrations', icon: Database },
-            { label: 'General', icon: Globe },
-          ].map((item, i) => (
+          {tabs.map((tab) => (
             <button 
-              key={i}
+              key={tab.label}
+              onClick={() => setActiveTab(tab.label)}
               className={`w-full flex items-center gap-3 px-4 py-3 rounded-xl transition-all ${
-                item.active ? 'bg-primary/10 text-primary border border-primary/20' : 'text-white/40 hover:bg-white/5 hover:text-white'
+                activeTab === tab.label ? 'bg-primary/10 text-primary border border-primary/20' : 'text-white/40 hover:bg-white/5 hover:text-white'
               }`}
             >
-              <item.icon className="w-5 h-5" />
-              <span className="font-bold text-sm">{item.label}</span>
+              <tab.icon className="w-5 h-5" />
+              <span className="font-bold text-sm">{tab.label}</span>
             </button>
           ))}
         </div>
 
         <div className="lg:col-span-3 glass-panel p-8 space-y-8">
           <div className="space-y-6">
-            <h3 className="text-xl font-bold border-b border-white/5 pb-4">API Configuration</h3>
+            <h3 className="text-xl font-bold border-b border-white/5 pb-4">{activeTab} Configuration</h3>
             
-            <div className="space-y-4">
-              <div className="grid gap-2">
-                <label className="text-sm font-bold text-white/60">Azure OpenAI Endpoint</label>
-                <input 
-                  type="text" 
-                  defaultValue="https://opsmind-ai.openai.azure.com/"
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm focus:border-primary/50"
-                />
+            {activeTab === 'Profile' && (
+              <div className="space-y-4 animate-in slide-in-from-bottom-2 duration-300">
+                <div className="grid gap-2">
+                  <label className="text-sm font-bold text-white/60">Azure OpenAI Endpoint</label>
+                  <input 
+                    type="text" 
+                    defaultValue="https://opsmind-ai.openai.azure.com/"
+                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm focus:border-primary/50"
+                  />
+                </div>
+                <div className="grid gap-2">
+                  <label className="text-sm font-bold text-white/60">Deployment Name</label>
+                  <input 
+                    type="text" 
+                    defaultValue="gpt-4o-deployment"
+                    className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm focus:border-primary/50"
+                  />
+                </div>
               </div>
-              <div className="grid gap-2">
-                <label className="text-sm font-bold text-white/60">Deployment Name</label>
-                <input 
-                  type="text" 
-                  defaultValue="gpt-4o-deployment"
-                  className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm focus:border-primary/50"
-                />
+            )}
+
+            {activeTab !== 'Profile' && (
+              <div className="py-12 flex flex-col items-center justify-center text-center gap-4 animate-in fade-in duration-500">
+                <div className="p-4 bg-white/5 rounded-full">
+                   {tabs.find(t => t.label === activeTab)?.icon && React.createElement(tabs.find(t => t.label === activeTab)!.icon, { className: "w-8 h-8 text-primary/40" })}
+                </div>
+                <div className="text-white/40">
+                  <p className="font-bold">{activeTab} module is active.</p>
+                  <p className="text-xs">Configuration for this module is managed by organization policy.</p>
+                </div>
               </div>
-              <div className="grid gap-2">
-                <label className="text-sm font-bold text-white/60">Telemetry Retension (Days)</label>
-                <select className="w-full bg-white/5 border border-white/10 rounded-lg px-4 py-2.5 text-sm focus:border-primary/50">
-                  <option>30 Days</option>
-                  <option>90 Days</option>
-                  <option>1 Year</option>
-                </select>
-              </div>
-            </div>
+            )}
           </div>
 
           <div className="flex justify-end gap-3 pt-4">
