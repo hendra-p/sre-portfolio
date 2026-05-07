@@ -16,25 +16,61 @@ export const ChatOps: React.FC = () => {
   const [input, setInput] = React.useState('');
   const [isTyping, setIsTyping] = React.useState(false);
 
-  const handleSend = () => {
+  const getAiResponse = async (userInput: string) => {
+    const apiKey = import.meta.env.VITE_GROQ_API_KEY;
+
+    // Fallback to Mock Logic if No API Key or Placeholder
+    if (!apiKey || apiKey === "your_groq_api_key_here") {
+      const text = userInput.toLowerCase();
+      if (text.includes('hi') || text.includes('hello')) return "Hello! I'm OpsMind AI (Local Mode). System health is 98.4%. Configure VITE_GROQ_API_KEY for real AI.";
+      if (text.includes('status') || text.includes('health')) return "Global status is 'Optimal'. All nodes are operating within normal parameters.";
+      if (text.includes('logs') || text.includes('sure')) return "I've analyzed the logs for 'payment-api-prod'. I found minor latency on /checkout. Should I escalate?";
+      return "I'm currently in Local Mode. To enable full AI analysis with Groq, please configure your API Key in the environment settings.";
+    }
+
+    try {
+      const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+        method: "POST",
+        headers: {
+          "Authorization": `Bearer ${apiKey}`,
+          "Content-Type": "application/json"
+        },
+        body: JSON.stringify({
+          model: "llama3-8b-8192",
+          messages: [
+            {
+              role: "system",
+              content: "You are OpsMind AI, a premium SRE assistant. Your personality is professional and technical. Keep responses under 3 sentences."
+            },
+            { role: "user", content: userInput }
+          ],
+          temperature: 0.7,
+          max_tokens: 256
+        })
+      });
+
+      const data = await response.json();
+      if (data.error) return `AI Error: ${data.error.message}`;
+      return data.choices[0].message.content;
+    } catch (error) {
+      return "I'm having trouble connecting to the AI core. Reverting to local diagnostics.";
+    }
+  };
+
+  const handleSend = async () => {
     if (!input.trim()) return;
 
     const userMsg: Message = { id: Date.now(), text: input, sender: 'user', timestamp: new Date() };
     setMessages(prev => [...prev, userMsg]);
+    const currentInput = input;
     setInput('');
     setIsTyping(true);
 
-    // Simulate AI response
-    setTimeout(() => {
-      const aiMsg: Message = { 
-        id: Date.now() + 1, 
-        text: `I've analyzed the state of 'payment-api-prod'. Current CPU is 45% and memory is stable. However, I noticed a slight increase in latency for the /v1/checkout endpoint. Should I investigate the logs?`, 
-        sender: 'ai', 
-        timestamp: new Date() 
-      };
-      setMessages(prev => [...prev, aiMsg]);
-      setIsTyping(false);
-    }, 1500);
+    const aiResponseText = await getAiResponse(currentInput);
+    
+    const aiMsg: Message = { id: Date.now() + 1, text: aiResponseText, sender: 'ai', timestamp: new Date() };
+    setMessages(prev => [...prev, aiMsg]);
+    setIsTyping(false);
   };
 
   return (
