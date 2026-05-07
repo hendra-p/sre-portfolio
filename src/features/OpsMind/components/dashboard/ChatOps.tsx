@@ -40,7 +40,16 @@ export const ChatOps: React.FC = () => {
           messages: [
             {
               role: "system",
-              content: "You are OpsMind AI, a premium SRE assistant. Your personality is professional and technical. Keep responses under 3 sentences."
+              content: `You are OpsMind AI, a premium SRE assistant for the OpsMind Platform. 
+              
+              CURRENT PLATFORM CONTEXT:
+              - System Status: Optimal (98.4% Health)
+              - Active Nodes: 128 nodes online.
+              - Recent Observation (1m ago): 'payment-api-prod' CPU usage spiked to 45%. Memory is stable at 65%. 
+              - Latency: Increased p99 latency (145ms) detected on '/v1/checkout' endpoint.
+              - Infrastructure: All nodes in US-East-1 are healthy. Staging cluster is underutilized (2%).
+              
+              Your personality is professional, concise, and technical. When users ask for overviews or status, use the context above. Keep responses under 3 sentences.`
             },
             { role: "user", content: userInput }
           ],
