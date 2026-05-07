@@ -5,12 +5,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 export const Header: React.FC = () => {
   const [showNotifications, setShowNotifications] = React.useState(false);
-
-  const notifications = [
+  const [notifications, setNotifications] = React.useState([
     { id: 1, text: 'Critical: CPU spike on payment-api', time: '2m ago', type: 'error' },
     { id: 2, text: 'New prediction: Memory leak likely', time: '14m ago', type: 'warn' },
     { id: 3, text: 'System backup completed', time: '1h ago', type: 'info' },
-  ];
+  ]);
+
+  const handleClearAll = () => {
+    setNotifications([]);
+  };
 
   return (
     <header className="h-16 border-b border-white/5 flex items-center justify-between px-8 bg-card/30 backdrop-blur-sm sticky top-0 z-50">
@@ -32,7 +35,11 @@ export const Header: React.FC = () => {
             className="relative text-white/60 hover:text-white transition-colors"
           >
             <Bell className="w-5 h-5" />
-            <span className="absolute -top-1 -right-1 w-4 h-4 bg-destructive rounded-full text-[10px] flex items-center justify-center text-white font-bold">3</span>
+            {notifications.length > 0 && (
+              <span className="absolute -top-1 -right-1 w-4 h-4 bg-destructive rounded-full text-[10px] flex items-center justify-center text-white font-bold">
+                {notifications.length}
+              </span>
+            )}
           </button>
 
           <AnimatePresence>
@@ -45,20 +52,31 @@ export const Header: React.FC = () => {
               >
                 <div className="flex items-center justify-between mb-4 pb-2 border-b border-white/5">
                    <h4 className="font-bold text-sm">System Notifications</h4>
-                   <button className="text-[10px] text-primary font-bold uppercase hover:underline">Clear All</button>
+                   <button 
+                     onClick={handleClearAll}
+                     className="text-[10px] text-primary font-bold uppercase hover:underline"
+                   >
+                     Clear All
+                   </button>
                 </div>
                 <div className="space-y-3">
-                  {notifications.map(n => (
-                    <div key={n.id} className="flex gap-3 hover:bg-white/5 p-2 rounded-lg transition-colors cursor-pointer group">
-                      <div className={`w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 ${
-                        n.type === 'error' ? 'bg-destructive' : n.type === 'warn' ? 'bg-accent' : 'bg-primary'
-                      }`} />
-                      <div>
-                        <p className="text-xs text-white/80 group-hover:text-white transition-colors">{n.text}</p>
-                        <span className="text-[10px] text-white/30 font-bold">{n.time}</span>
-                      </div>
+                  {notifications.length === 0 ? (
+                    <div className="text-center py-4 text-white/20 text-xs italic">
+                      No new notifications
                     </div>
-                  ))}
+                  ) : (
+                    notifications.map(n => (
+                      <div key={n.id} className="flex gap-3 hover:bg-white/5 p-2 rounded-lg transition-colors cursor-pointer group">
+                        <div className={`w-1.5 h-1.5 rounded-full mt-1.5 shrink-0 ${
+                          n.type === 'error' ? 'bg-destructive' : n.type === 'warn' ? 'bg-accent' : 'bg-primary'
+                        }`} />
+                        <div>
+                          <p className="text-xs text-white/80 group-hover:text-white transition-colors">{n.text}</p>
+                          <span className="text-[10px] text-white/30 font-bold">{n.time}</span>
+                        </div>
+                      </div>
+                    ))
+                  )}
                 </div>
               </motion.div>
             )}
