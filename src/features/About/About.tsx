@@ -28,8 +28,8 @@ export const About: React.FC = () => {
                 <ShieldCheck size={24} />
               </div>
               <div>
-                <h4 className="font-semibold text-textMain">Compliance</h4>
-                <p className="text-sm text-textMuted">Meeting OJK reporting standards</p>
+                <h4 className="font-semibold text-textMain">SLA Adherence</h4>
+                <p className="text-sm text-textMuted">Maintaining 99.99% uptime within strict banking SLA targets</p>
               </div>
             </div>
             <div className="flex items-start space-x-3">
