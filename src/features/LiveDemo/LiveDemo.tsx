@@ -1,5 +1,5 @@
-import { Cpu, Server, Layout, Database, ArrowRight, Activity } from 'lucide-react';
-import InfraMonitorDashboard from './InfraMonitorDashboard';
+import { Cpu, Server, Layout, Database, ArrowRight, Activity, BrainCircuit } from 'lucide-react';
+import { OpsMindApp } from '../OpsMind/OpsMindApp';
 
 export default function LiveDemo() {
   return (
@@ -12,15 +12,15 @@ export default function LiveDemo() {
         {/* Section Header */}
         <div className="max-w-3xl mb-16">
           <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-primary/10 border border-primary/20 text-primary text-[10px] font-bold uppercase tracking-widest mb-6">
-            <Activity className="w-3 h-3" />
-            Live Project Showcase
+            <BrainCircuit className="w-3 h-3" />
+            Next-Gen Observability
           </div>
           <h2 className="text-4xl md:text-5xl font-black text-textMain mb-6 leading-tight">
-            Infrastructure <span className="text-primary">Observability</span> System
+            OpsMind <span className="text-primary">AI Intelligence</span> Platform
           </h2>
           <p className="text-textMuted text-lg leading-relaxed">
-            A real-time monitoring agent-based architecture designed for high-availability systems. 
-            Below is a live instance of the dashboard, showing metrics collected by the Python agent.
+            A premium, AI-powered infrastructure observability suite. 
+            Featuring real-time metrics, predictive analytics, and automated RCA (Root Cause Analysis).
           </p>
         </div>
 
@@ -28,57 +28,55 @@ export default function LiveDemo() {
         <div className="grid grid-cols-1 lg:grid-cols-4 gap-4 mb-16">
           <ArchitectureCard 
             icon={<Cpu className="w-5 h-5" />} 
-            title="Monitoring Agent" 
-            desc="Python script using psutil to collect system metrics every 5s."
-            tech="Python, psutil"
+            title="AI Engine" 
+            desc="LLM-based root cause analysis using Azure OpenAI and LangChain."
+            tech="OpenAI, Python"
           />
           <ArchitectureCard 
             icon={<Server className="w-5 h-5" />} 
-            title="Backend API" 
-            desc="FastAPI service for data processing, alerting, and persistence."
-            tech="FastAPI, SQLAlchemy"
+            title="FastAPI Core" 
+            desc="High-performance backend for telemetry ingestion and alerting."
+            tech="FastAPI, Redis"
           />
           <ArchitectureCard 
-            icon={<Database className="w-5 h-5" />} 
-            title="Data Storage" 
-            desc="PostgreSQL for long-term history with 14-day retention policy."
-            tech="PostgreSQL, Docker"
+            icon={<Activity className="w-5 h-5" />} 
+            title="Predictive" 
+            desc="Anomaly detection and resource forecasting using historical trends."
+            tech="Prophet, Scikit-learn"
           />
           <ArchitectureCard 
             icon={<Layout className="w-5 h-5" />} 
-            title="Dashboard UI" 
-            desc="React application with Recharts for real-time visualization."
-            tech="React, Recharts"
+            title="Glass UI" 
+            desc="Premium Cyber-Industrial dashboard with interactive visualization."
+            tech="React, Tailwind"
           />
         </div>
 
         {/* Live Dashboard Interface */}
-        <div className="bg-background/40 backdrop-blur-sm p-2 md:p-6 rounded-[2.5rem] border border-white/5 shadow-2xl overflow-hidden">
-          <div className="bg-background rounded-[2rem] border border-white/5 shadow-inner p-6 md:p-8">
-             <InfraMonitorDashboard />
-          </div>
+        <div className="bg-background/40 backdrop-blur-sm p-1 rounded-[2.5rem] border border-white/5 shadow-2xl overflow-hidden">
+           <OpsMindApp />
         </div>
         
         {/* Footer Actions */}
         <div className="mt-12 flex flex-wrap items-center gap-6 justify-center lg:justify-start">
           <a 
-            href="https://github.com/hendra-p/infra-monitor" 
+            href="https://github.com/hendra-p/opsmind-ai" 
             target="_blank" 
             rel="noopener noreferrer"
             className="flex items-center gap-2 text-sm font-bold text-textMain hover:text-primary transition-colors group"
           >
-            Explore Source Code
+            Explore OpsMind AI Source
             <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
           </a>
           <div className="h-4 w-px bg-white/10 hidden sm:block"></div>
           <div className="text-[11px] text-textMuted flex items-center gap-4">
             <span className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
-              99.9% Uptime Goal
+              <span className="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+              AI Engine Online
             </span>
             <span className="flex items-center gap-1.5">
-              <span className="w-1.5 h-1.5 rounded-full bg-primary"></span>
-              Sub-second Latency
+              <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
+              99.9% Prediction Accuracy
             </span>
           </div>
         </div>
