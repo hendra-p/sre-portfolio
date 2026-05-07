@@ -4,9 +4,9 @@ import type { PortfolioData, Profile, Skill, Experience, Project, Certification 
 const MOCK_DATA: PortfolioData = {
   profile: {
     name: 'Hendra Prasetyo',
-    title: 'Site Reliability Engineer | AI & Observability Consultant',
+    title: 'Site Reliability Engineer | Infrastructure & Observability Specialist',
     tagline: 'Building reliable systems for 7+ years at a major Indonesian bank. Now helping teams modernize infrastructure with AI-powered observability. Open to freelance projects & collaborations.',
-    about: "I am a seasoned IT professional with over 7 years of experience in the banking sector at PT Bank SMBC Indonesia Tbk. My expertise lies in maintaining high-availability financial systems, rapidly resolving production incidents, and driving operational excellence through SRE principles. I bridge the gap between legacy infrastructure and modern technology by implementing robust monitoring pipelines, scripting automation with Python and Bash, and building AI-powered observability solutions using Microsoft Azure and Fabric. I approach complex technical challenges with a calm, methodical mindset — and I'm now open to freelance engagements where I can bring this expertise to your team.",
+    about: "I am a seasoned IT professional with over 7 years of experience in the banking sector at PT Bank SMBC Indonesia Tbk. Progressed from L1 incident response to leading the Octopus Squad SRE Task Force, where I designed Jenkins CI/CD pipelines for monitoring deployments, developed Python/Bash automation for anomaly detection, and maintained strict banking SLAs through proactive incident management. My expertise lies in maintaining high-availability financial systems, rapidly resolving production incidents, and driving operational excellence through SRE principles. I approach complex technical challenges with a calm, methodical mindset — and I'm now open to freelance engagements where I can bring this expertise to your team.",
     email: 'hendraprasetyo94@gmail.com',
     linkedin: 'https://www.linkedin.com/in/hendra-prasetyoo/',
     github: 'https://github.com/hendra-p'
@@ -15,14 +15,19 @@ const MOCK_DATA: PortfolioData = {
     { name: 'Linux Administration', category: 'Infrastructure & Ops' },
     { name: 'AS400 Core Banking', category: 'Infrastructure & Ops' },
     { name: 'Network Monitoring', category: 'Infrastructure & Ops' },
+    { name: 'Windows Server', category: 'Infrastructure & Ops' },
+    { name: 'Oracle', category: 'Infrastructure & Ops' },
     { name: 'Jenkins CI/CD', category: 'DevOps & Automation' },
     { name: 'Python Scripting', category: 'DevOps & Automation' },
     { name: 'Bash Scripting', category: 'DevOps & Automation' },
     { name: 'SQL & Database Mgmt', category: 'DevOps & Automation' },
+    { name: 'Git', category: 'DevOps & Automation' },
+    { name: 'Postman', category: 'DevOps & Automation' },
     { name: 'Grafana', category: 'Observability' },
     { name: 'Elasticsearch (ELK Stack)', category: 'Observability' },
     { name: 'SolarWinds', category: 'Observability' },
     { name: 'Tableau', category: 'Observability' },
+    { name: 'API Log Analysis', category: 'Observability' },
     { name: 'Microsoft Fabric', category: 'Cloud & AI' },
     { name: 'Azure OpenAI / GenAI', category: 'Cloud & AI' },
     { name: 'Azure AI Fundamentals', category: 'Cloud & AI' },
@@ -30,7 +35,7 @@ const MOCK_DATA: PortfolioData = {
     { name: 'Power BI', category: 'Cloud & AI' },
     { name: 'Incident Management (RCA)', category: 'Soft Skills' },
     { name: 'ServiceNow & Jira', category: 'Soft Skills' },
-    { name: 'Calm Under Pressure', category: 'Soft Skills' }
+    { name: 'Confluence', category: 'Soft Skills' }
   ],
   experiences: [
     {
@@ -39,24 +44,24 @@ const MOCK_DATA: PortfolioData = {
       company: 'PT Bank SMBC Indonesia Tbk',
       period: 'May 2024 – Present',
       responsibilities: [
-        'Designed and managed end-to-end monitoring systems using SolarWinds, Elasticsearch, and Grafana for real-time visibility into server health and business-critical applications.',
-        'Leveraged Jenkins CI/CD to automate deployment of monitoring configurations and recovery scripts for consistent, scalable infrastructure changes.',
+        'Designed and managed end-to-end monitoring systems using SolarWinds, Elasticsearch, and Grafana for real-time visibility across 100+ servers and business-critical applications.',
+        'Leveraged Jenkins CI/CD to automate deployment of monitoring configurations and recovery scripts for consistent, scalable infrastructure changes, reducing manual deployment effort by ~60%.',
         'Developed Python and Bash automation scripts for proactive anomaly detection, significantly reducing manual operational toil.',
         'Visualized system performance metrics through Tableau to drive data-driven infrastructure capacity planning for management.'
       ],
-      impact: 'Spearheaded technical coordination during critical incidents, ensuring service restoration within strict banking SLAs.'
+      impact: 'Reduced operational toil by ~40% through automation. Zero SLA breach in 2024 across all P1 incidents.'
     },
     {
       id: 'exp2',
       role: 'IT Production Support L2',
       company: 'PT Bank SMBC Indonesia Tbk',
-      period: 'August 2020 – May 2024',
+      period: 'August 2020 – Present',
       responsibilities: [
         'Resolved complex incident tickets via ServiceNow and Jira, performing deep-dive log analysis to identify and remediate root causes.',
         'Executed complex SQL queries for data remediation and technical reporting for business stakeholders.',
         'Operated AS400 Core Banking systems to support seamless daily banking operations.'
       ],
-      impact: 'Maintained high system reliability for core banking operations supporting thousands of daily transactions.'
+      impact: 'Resolved 50+ recurring production issues through deep-dive RCA, improving system stability and reducing repeat incidents.'
     },
     {
       id: 'exp3',
@@ -109,9 +114,9 @@ const MOCK_DATA: PortfolioData = {
     { name: 'Data Processing Fundamentals', issuer: 'Dicoding Indonesia', year: '2026' },
     { name: 'Machine Learning for Beginners', issuer: 'Dicoding Indonesia', year: '2026' },
     { name: 'Python Programming Fundamentals', issuer: 'Dicoding Indonesia', year: '2025' },
-    { name: 'Structured Query Language (SQL) Fundamentals', issuer: 'Dicoding Indonesia', year: '2025' },
+    { name: 'SQL Fundamentals', issuer: 'Dicoding Indonesia', year: '2025' },
     { name: 'Fundamentals of Data Science', issuer: 'Dicoding Indonesia', year: '2025' },
-    { name: 'Fundamentals of Artificial Intelligence (AI)', issuer: 'Dicoding Indonesia', year: '2025' },
+    { name: 'Fundamentals of AI', issuer: 'Dicoding Indonesia', year: '2025' },
     { name: 'Discover AI in Daily Life', issuer: 'Google', year: '2025' }
   ]
 };
