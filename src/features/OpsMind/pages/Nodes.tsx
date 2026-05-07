@@ -1,8 +1,6 @@
 import React from 'react';
 import { 
   Server, 
-  Cpu, 
-  Database, 
   Zap,
   Activity,
   Search

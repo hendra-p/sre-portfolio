@@ -7,8 +7,7 @@ import {
   AlertTriangle, 
   BrainCircuit, 
   LineChart, 
-  MessageSquare, 
-  Settings,
+  MessageSquare,
   ShieldCheck,
   ChevronRight
 } from 'lucide-react';
@@ -29,7 +28,6 @@ const navItems = [
   { icon: BrainCircuit, label: 'AI Insights', id: 'ai' },
   { icon: LineChart, label: 'Predictive', id: 'predictive' },
   { icon: MessageSquare, label: 'ChatOps', id: 'chatops' },
-  { icon: Settings, label: 'Settings', id: 'settings' },
 ];
 
 import { useStore } from '../../store/useStore';

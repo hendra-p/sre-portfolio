@@ -4,10 +4,7 @@ import {
   Server, 
   AlertTriangle, 
   ShieldCheck, 
-  Clock, 
-  Cpu, 
-  Zap,
-  TrendingUp
+  Clock,
 } from 'lucide-react';
 import { KPICard } from '../components/ui/KPICard';
 import { 

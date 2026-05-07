@@ -8,7 +8,6 @@ import { Logs } from './pages/Logs';
 import { Alerts } from './pages/Alerts';
 import { Predictive } from './pages/Predictive';
 import { AIInsights } from './pages/AIInsights';
-import { Settings } from './pages/Settings';
 import { ChatOps } from './components/dashboard/ChatOps';
 
 export const OpsMindApp = () => {
@@ -26,10 +25,9 @@ export const OpsMindApp = () => {
         {activePage === 'ai' && <AIInsights />}
         {activePage === 'predictive' && <Predictive />}
         {activePage === 'chatops' && <ChatOps />}
-        {activePage === 'settings' && <Settings />}
         
         {/* Fallback for undefined pages */}
-        {!['overview', 'infra', 'nodes', 'apps', 'logs', 'alerts', 'ai', 'predictive', 'chatops', 'settings'].includes(activePage) && (
+        {!['overview', 'infra', 'nodes', 'apps', 'logs', 'alerts', 'ai', 'predictive', 'chatops'].includes(activePage) && (
           <div className="flex flex-col items-center justify-center h-full text-white/20">
             <h2 className="text-2xl font-bold uppercase tracking-widest">{activePage} Section</h2>
             <p>Coming Soon in Phase 2</p>

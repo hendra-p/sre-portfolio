@@ -1,12 +1,6 @@
 import React from 'react';
 import { 
   Server, 
-  Cpu, 
-  Database, 
-  ShieldCheck, 
-  AlertTriangle, 
-  ExternalLink,
-  ChevronRight,
   MoreVertical
 } from 'lucide-react';
 

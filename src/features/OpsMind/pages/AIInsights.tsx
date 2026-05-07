@@ -1,9 +1,6 @@
 import React from 'react';
 import { 
   BrainCircuit, 
-  Zap, 
-  Search,
-  MessageSquare,
   Sparkles,
   ChevronRight
 } from 'lucide-react';

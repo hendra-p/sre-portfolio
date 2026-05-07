@@ -4,13 +4,10 @@ import {
   AlertTriangle, 
   Zap, 
   BrainCircuit,
-  ArrowRight,
   ShieldCheck,
   Activity
 } from 'lucide-react';
-import { motion } from 'framer-motion';
 import { 
-  LineChart, 
   Line, 
   XAxis, 
   YAxis, 

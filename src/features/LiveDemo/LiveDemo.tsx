@@ -1,4 +1,4 @@
-import { Cpu, Server, Layout, Database, ArrowRight, Activity, BrainCircuit } from 'lucide-react';
+import { Cpu, Server, Layout, ArrowRight, Activity, BrainCircuit } from 'lucide-react';
 import { OpsMindApp } from '../OpsMind/OpsMindApp';
 
 export default function LiveDemo() {
