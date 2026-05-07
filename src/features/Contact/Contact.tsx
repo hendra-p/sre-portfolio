@@ -11,16 +11,16 @@ export const Contact: React.FC = () => {
     <Section id="contact" title="Get In Touch">
       <div className="max-w-2xl mx-auto text-center">
         <h3 className="text-2xl md:text-3xl font-bold text-textMain mb-6">
-          Ready to improve your system reliability?
+          Have a reliability challenge or project in mind?
         </h3>
         <p className="text-textMuted text-lg mb-10 leading-relaxed">
-          I'm currently open to new opportunities. Whether you have a question or just want to say hi, 
-          I'll try my best to get back to you!
+          I'm available for freelance projects — from SRE consulting and observability setup, 
+          to AI-powered monitoring solutions. Let's discuss how I can help your team.
         </p>
         
         <a href={`mailto:${profile.email}`}>
           <Button size="lg" className="px-12 text-lg mb-12">
-            Say Hello
+            Start a Conversation
           </Button>
         </a>
 
