@@ -22,8 +22,9 @@ export const MainLayout: React.FC<MainLayoutProps> = ({ children }) => {
 
   const navLinks = [
     { name: 'About', href: '#about' },
-    { name: 'Experience', href: '#experience' },
     { name: 'Skills', href: '#skills' },
+    { name: 'Experience', href: '#experience' },
+    { name: 'Certifications', href: '#certifications' },
     { name: 'Case Studies', href: '#projects' },
     { name: 'Live Demo', href: '#live-demo' },
     { name: 'Contact', href: '#contact' },

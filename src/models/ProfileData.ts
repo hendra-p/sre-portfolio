@@ -1,6 +1,6 @@
 export interface Skill {
   name: string;
-  category: 'Technical' | 'Tools' | 'Soft Skills';
+  category: string;
 }
 
 export interface Experience {
@@ -24,6 +24,12 @@ export interface Project {
   demoSectionId?: string;
 }
 
+export interface Certification {
+  name: string;
+  issuer: string;
+  year: string;
+}
+
 export interface Profile {
   name: string;
   title: string;
@@ -40,4 +46,5 @@ export interface PortfolioData {
   skills: Skill[];
   experiences: Experience[];
   projects: Project[];
+  certifications: Certification[];
 }

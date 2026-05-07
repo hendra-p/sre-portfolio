@@ -1,4 +1,4 @@
-import type { PortfolioData, Profile, Skill, Experience, Project } from '../models/ProfileData';
+import type { PortfolioData, Profile, Skill, Experience, Project, Certification } from '../models/ProfileData';
 
 // Mock Data representing Hendra's resume
 const MOCK_DATA: PortfolioData = {
@@ -12,41 +12,62 @@ const MOCK_DATA: PortfolioData = {
     github: 'https://github.com/hendra-p'
   },
   skills: [
-    { name: 'Linux Administration', category: 'Technical' },
-    { name: 'SQL & Database Mgmt', category: 'Technical' },
-    { name: 'Python Scripting', category: 'Technical' },
-    { name: 'Bash Scripting', category: 'Technical' },
-    { name: 'Log Analysis', category: 'Tools' },
-    { name: 'Monitoring (Prometheus/Grafana)', category: 'Tools' },
-    { name: 'APIs & Middleware', category: 'Tools' },
-    { name: 'Incident Management (MTTR, RCA)', category: 'Soft Skills' },
-    { name: 'Problem Solving', category: 'Soft Skills' },
-    { name: 'Calm under pressure', category: 'Soft Skills' }
+    { name: 'Linux Administration', category: 'Infrastructure & Ops' },
+    { name: 'AS400 Core Banking', category: 'Infrastructure & Ops' },
+    { name: 'Network Monitoring', category: 'Infrastructure & Ops' },
+    { name: 'Jenkins CI/CD', category: 'DevOps & Automation' },
+    { name: 'Python Scripting', category: 'DevOps & Automation' },
+    { name: 'Bash Scripting', category: 'DevOps & Automation' },
+    { name: 'SQL & Database Mgmt', category: 'DevOps & Automation' },
+    { name: 'Grafana', category: 'Observability' },
+    { name: 'Elasticsearch (ELK Stack)', category: 'Observability' },
+    { name: 'SolarWinds', category: 'Observability' },
+    { name: 'Tableau', category: 'Observability' },
+    { name: 'Microsoft Fabric', category: 'Cloud & AI' },
+    { name: 'Azure OpenAI / GenAI', category: 'Cloud & AI' },
+    { name: 'Azure AI Fundamentals', category: 'Cloud & AI' },
+    { name: 'Machine Learning (Beginner)', category: 'Cloud & AI' },
+    { name: 'Power BI', category: 'Cloud & AI' },
+    { name: 'Incident Management (RCA)', category: 'Soft Skills' },
+    { name: 'ServiceNow & Jira', category: 'Soft Skills' },
+    { name: 'Calm Under Pressure', category: 'Soft Skills' }
   ],
   experiences: [
     {
       id: 'exp1',
-      role: 'Site Reliability Engineer',
-      company: 'Major Banking Institution',
-      period: '2020 - Present',
+      role: 'IT Monitoring & Service Recovery Engineer (SRE Task Force)',
+      company: 'PT Bank SMBC Indonesia Tbk',
+      period: 'May 2024 – Present',
       responsibilities: [
-        'Lead incident response for critical financial systems and integration platforms (BIFAST).',
-        'Monitor system logs, perform root cause analysis, and implement preventative measures.',
-        'Support regulatory reporting systems ensuring 100% compliance with OJK requirements.'
+        'Designed and managed end-to-end monitoring systems using SolarWinds, Elasticsearch, and Grafana for real-time visibility into server health and business-critical applications.',
+        'Leveraged Jenkins CI/CD to automate deployment of monitoring configurations and recovery scripts for consistent, scalable infrastructure changes.',
+        'Developed Python and Bash automation scripts for proactive anomaly detection, significantly reducing manual operational toil.',
+        'Visualized system performance metrics through Tableau to drive data-driven infrastructure capacity planning for management.'
       ],
-      impact: 'Reduced Mean Time To Recovery (MTTR) by 35% through proactive monitoring and automated alert routing.'
+      impact: 'Spearheaded technical coordination during critical incidents, ensuring service restoration within strict banking SLAs.'
     },
     {
       id: 'exp2',
-      role: 'IT Application Support Engineer',
-      company: 'Financial Services Tech',
-      period: '2016 - 2020',
+      role: 'IT Production Support L2',
+      company: 'PT Bank SMBC Indonesia Tbk',
+      period: 'August 2020 – May 2024',
       responsibilities: [
-        'Handled L2/L3 production issues for high-volume transaction systems.',
-        'Developed Bash and Python scripts to automate routine log aggregation and daily health checks.',
-        'Collaborated with development teams to deploy hotfixes and architecture optimizations.'
+        'Resolved complex incident tickets via ServiceNow and Jira, performing deep-dive log analysis to identify and remediate root causes.',
+        'Executed complex SQL queries for data remediation and technical reporting for business stakeholders.',
+        'Operated AS400 Core Banking systems to support seamless daily banking operations.'
       ],
-      impact: 'Achieved 99.99% system uptime and automated 20+ hours of weekly manual reporting tasks.'
+      impact: 'Maintained high system reliability for core banking operations supporting thousands of daily transactions.'
+    },
+    {
+      id: 'exp3',
+      role: 'IT Production Support L1',
+      company: 'PT Bank SMBC Indonesia Tbk',
+      period: 'August 2018 – August 2020',
+      responsibilities: [
+        'Handled initial incident response, service restarts, and basic error log analysis as first-line support.',
+        'Supported the ITCCMS system to verify ATM card linkages and ensure backend data accuracy.'
+      ],
+      impact: 'Delivered reliable first-line support for banking operations, building strong incident management fundamentals.'
     }
   ],
   projects: [
@@ -79,6 +100,19 @@ const MOCK_DATA: PortfolioData = {
       hasLiveDemo: true,
       demoSectionId: 'live-demo'
     }
+  ],
+  certifications: [
+    { name: 'Microsoft Certified: Fabric Analytics Engineer Associate', issuer: 'Dicoding Indonesia', year: '2026' },
+    { name: 'Microsoft Certified: Azure AI Fundamentals', issuer: 'Dicoding Indonesia', year: '2026' },
+    { name: 'Applied Data Science with Microsoft Fabric', issuer: 'Dicoding Indonesia', year: '2026' },
+    { name: 'Generative AI Application Development with Microsoft Azure', issuer: 'Dicoding Indonesia', year: '2026' },
+    { name: 'Data Processing Fundamentals', issuer: 'Dicoding Indonesia', year: '2026' },
+    { name: 'Machine Learning for Beginners', issuer: 'Dicoding Indonesia', year: '2026' },
+    { name: 'Python Programming Fundamentals', issuer: 'Dicoding Indonesia', year: '2025' },
+    { name: 'Structured Query Language (SQL) Fundamentals', issuer: 'Dicoding Indonesia', year: '2025' },
+    { name: 'Fundamentals of Data Science', issuer: 'Dicoding Indonesia', year: '2025' },
+    { name: 'Fundamentals of Artificial Intelligence (AI)', issuer: 'Dicoding Indonesia', year: '2025' },
+    { name: 'Discover AI in Daily Life', issuer: 'Google', year: '2025' }
   ]
 };
 
@@ -88,6 +122,7 @@ export interface IPortfolioService {
   getSkills(): Skill[];
   getExperiences(): Experience[];
   getProjects(): Project[];
+  getCertifications(): Certification[];
 }
 
 // Implementation of the Service (Concrete Class)
@@ -112,5 +147,9 @@ export class PortfolioService implements IPortfolioService {
 
   public getProjects(): Project[] {
     return this.data.projects;
+  }
+
+  public getCertifications(): Certification[] {
+    return this.data.certifications;
   }
 }

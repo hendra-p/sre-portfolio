@@ -5,6 +5,7 @@ import { Hero } from './features/Hero/Hero'
 import { About } from './features/About/About'
 import { Experience } from './features/Experience/Experience'
 import { Skills } from './features/Skills/Skills'
+import { Certifications } from './features/Certifications/Certifications'
 import { Projects } from './features/Projects/Projects'
 import LiveDemo from './features/LiveDemo/LiveDemo'
 import { Contact } from './features/Contact/Contact'
@@ -16,8 +17,9 @@ function App() {
       <MainLayout>
         <Hero />
         <About />
-        <Experience />
         <Skills />
+        <Experience />
+        <Certifications />
         <Projects />
         <LiveDemo />
         <Contact />
