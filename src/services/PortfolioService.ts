@@ -4,9 +4,9 @@ import type { PortfolioData, Profile, Skill, Experience, Project, Certification 
 const MOCK_DATA: PortfolioData = {
   profile: {
     name: 'Hendra Prasetyo',
-    title: 'IT Application Support & Site Reliability Engineer',
-    tagline: 'Reliability-focused problem solver. Ensuring system stability, minimizing MTTR, and driving operational excellence.',
-    about: 'I am a seasoned IT professional with over 7 years of experience in the banking sector. My expertise lies in maintaining high-availability financial systems, rapidly resolving production incidents, and optimizing system performance. I bridge the gap between development and operations by implementing robust monitoring, scripting automation, and ensuring strict compliance with regulatory reporting standards (e.g., OJK). I approach complex technical challenges with a calm, methodical, and SRE-driven mindset.',
+    title: 'Site Reliability Engineer | AI & Observability Consultant',
+    tagline: 'Building reliable systems for 7+ years at a major Indonesian bank. Now helping teams modernize infrastructure with AI-powered observability. Open to freelance projects & collaborations.',
+    about: "I am a seasoned IT professional with over 7 years of experience in the banking sector at PT Bank SMBC Indonesia Tbk. My expertise lies in maintaining high-availability financial systems, rapidly resolving production incidents, and driving operational excellence through SRE principles. I bridge the gap between legacy infrastructure and modern technology by implementing robust monitoring pipelines, scripting automation with Python and Bash, and building AI-powered observability solutions using Microsoft Azure and Fabric. I approach complex technical challenges with a calm, methodical mindset — and I'm now open to freelance engagements where I can bring this expertise to your team.",
     email: 'hendraprasetyo94@gmail.com',
     linkedin: 'https://www.linkedin.com/in/hendra-prasetyoo/',
     github: 'https://github.com/hendra-p'
