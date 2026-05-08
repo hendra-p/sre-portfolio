@@ -3,7 +3,7 @@ import type { PortfolioData, Profile, Skill, Experience, Project, Certification 
 // Mock Data representing Hendra's resume
 const MOCK_DATA: PortfolioData = {
   profile: {
-    name: 'Hendra Prasetyo',
+    name: 'Platform Admin',
     title: 'Site Reliability Engineer | Infrastructure & Observability Specialist',
     tagline: 'Building reliable systems for 7+ years at a major Indonesian bank. Now helping teams modernize infrastructure with AI-powered observability. Open to freelance projects & collaborations.',
     about: "I am a seasoned IT professional with over 7 years of experience in the banking sector at PT Bank SMBC Indonesia Tbk. Progressed from L1 incident response to leading the Octopus Squad SRE Task Force, where I designed Jenkins CI/CD pipelines for monitoring deployments, developed Python/Bash automation for anomaly detection, and maintained strict banking SLAs through proactive incident management. My expertise lies in maintaining high-availability financial systems, rapidly resolving production incidents, and driving operational excellence through SRE principles. I approach complex technical challenges with a calm, methodical mindset — and I'm now open to freelance engagements where I can bring this expertise to your team.",

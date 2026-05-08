@@ -69,8 +69,8 @@ export const Sidebar: React.FC = () => {
             HP
           </div>
           <div>
-            <div className="text-sm font-medium">Hendra Prasetyo</div>
-            <div className="text-xs text-white/40">Principal Architect</div>
+            <div className="text-sm font-medium">Platform Admin</div>
+            <div className="text-xs text-white/40">SRE Specialist</div>
           </div>
         </div>
       </div>
