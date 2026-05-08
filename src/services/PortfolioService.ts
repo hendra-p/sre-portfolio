@@ -1,15 +1,15 @@
 import type { PortfolioData, Profile, Skill, Experience, Project, Certification } from '../models/ProfileData';
 
-// Mock Data representing Hendra's resume
+// Mock Data representing the SRE Profile
 const MOCK_DATA: PortfolioData = {
   profile: {
     name: 'Platform Admin',
     title: 'Site Reliability Engineer | Infrastructure & Observability Specialist',
-    tagline: 'Building reliable systems for 7+ years at a major Indonesian bank. Now helping teams modernize infrastructure with AI-powered observability. Open to freelance projects & collaborations.',
-    about: "I am a seasoned IT professional with over 7 years of experience in the banking sector at PT Bank SMBC Indonesia Tbk. Progressed from L1 incident response to leading the Octopus Squad SRE Task Force, where I designed Jenkins CI/CD pipelines for monitoring deployments, developed Python/Bash automation for anomaly detection, and maintained strict banking SLAs through proactive incident management. My expertise lies in maintaining high-availability financial systems, rapidly resolving production incidents, and driving operational excellence through SRE principles. I approach complex technical challenges with a calm, methodical mindset — and I'm now open to freelance engagements where I can bring this expertise to your team.",
-    email: 'hendraprasetyo94@gmail.com',
-    linkedin: 'https://www.linkedin.com/in/hendra-prasetyoo/',
-    github: 'https://github.com/hendra-p'
+    tagline: 'Building reliable systems for 7+ years. Now helping teams modernize infrastructure with AI-powered observability.',
+    about: "I am a seasoned IT professional with extensive experience in the banking sector. Progressed from incident response to leading SRE Task Forces, where I designed CI/CD pipelines for monitoring, developed automation for anomaly detection, and maintained strict SLAs through proactive incident management. My expertise lies in maintaining high-availability systems, rapidly resolving production incidents, and driving operational excellence through SRE principles.",
+    email: 'admin@example.com',
+    linkedin: 'https://linkedin.com/in/sre-expert',
+    github: 'https://github.com/sre-expert'
   },
   skills: [
     { name: 'Linux Administration', category: 'Infrastructure & Ops' },

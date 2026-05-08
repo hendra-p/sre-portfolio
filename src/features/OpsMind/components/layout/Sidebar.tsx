@@ -66,7 +66,7 @@ export const Sidebar: React.FC = () => {
       <div className="mt-auto p-4 bg-white/5 rounded-xl border border-white/5">
         <div className="flex items-center gap-3">
           <div className="w-10 h-10 rounded-full bg-secondary flex items-center justify-center text-sm font-bold">
-            HP
+            PA
           </div>
           <div>
             <div className="text-sm font-medium">Platform Admin</div>
