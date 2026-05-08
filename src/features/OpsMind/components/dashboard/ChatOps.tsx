@@ -58,7 +58,6 @@ export const ChatOps: React.FC = () => {
     const newMessages = [...messages, userMsg];
     setMessages(newMessages);
     
-    const currentInput = input;
     setInput('');
     setIsTyping(true);
 
