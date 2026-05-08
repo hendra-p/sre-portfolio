@@ -17,17 +17,6 @@ export const ChatOps: React.FC = () => {
   const [isTyping, setIsTyping] = React.useState(false);
 
   const getAiResponse = async (history: Message[]) => {
-    const apiKey = import.meta.env.VITE_GROQ_API_KEY;
-
-    // Fallback to Mock Logic if No API Key or Placeholder
-    if (!apiKey || apiKey === "your_groq_api_key_here") {
-      const lastInput = history[history.length - 1].text.toLowerCase();
-      if (lastInput.includes('hi') || lastInput.includes('hello')) return "Hello! I'm OpsMind AI (Local Mode). System health is 98.4%. Configure VITE_GROQ_API_KEY for real AI.";
-      if (lastInput.includes('status') || lastInput.includes('health')) return "Global status is 'Optimal'. All nodes are operating within normal parameters.";
-      if (lastInput.includes('logs') || lastInput.includes('sure')) return "I've analyzed the logs for 'payment-api-prod'. I found minor latency on /checkout. Should I escalate?";
-      return "I'm currently in Local Mode. To enable full AI analysis with Groq, please configure your API Key in the environment settings.";
-    }
-
     // Convert history to Groq format
     const apiMessages = history.map(msg => ({
       role: msg.sender === 'user' ? 'user' : 'assistant',
@@ -35,44 +24,29 @@ export const ChatOps: React.FC = () => {
     }));
 
     try {
-      const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
+      const response = await fetch("/api/chat", {
         method: "POST",
         headers: {
-          "Authorization": `Bearer ${apiKey}`,
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({
-          model: "llama-3.3-70b-versatile",
-          messages: [
-            {
-              role: "system",
-              content: `You are OpsMind AI, a premium and professional SRE assistant for the OpsMind Platform. 
-              
-              CURRENT PLATFORM CONTEXT:
-              - System Status: Optimal (98.4% Health)
-              - Active Nodes: 128 nodes online.
-              - Recent Observation (1m ago): 'payment-api-prod' CPU usage spiked to 45%. Memory is stable at 65%. 
-              - Latency: Increased p99 latency (145ms) detected on '/v1/checkout' endpoint.
-              - Infrastructure: All nodes in US-East-1 are healthy.
-              
-              PERSONALITY & STYLE:
-              - Be professional, concise, and technical, but also conversational and helpful.
-              - Do NOT just repeat the status if it's not relevant to the user's specific question.
-              - If a user greets you, greet them back naturally.
-              - If asked for something off-topic (like a joke), you can comply briefly but stay in your "SRE persona" (e.g., make it a technical joke).
-              - Keep responses under 3 sentences unless a deep technical explanation is requested.`
-            },
-            ...apiMessages
-          ],
-          temperature: 0.7,
-          max_tokens: 256
-        })
+        body: JSON.stringify({ messages: apiMessages })
       });
 
       const data = await response.json();
-      if (data.error) return `AI Error: ${data.error.message}`;
+      
+      // Fallback if the API route itself returns an error (like missing API Key on Vercel)
+      if (data.error) {
+        if (data.error.includes('API Key not configured')) {
+          const lastInput = history[history.length - 1].text.toLowerCase();
+          if (lastInput.includes('hi') || lastInput.includes('hello')) return "Hello! I'm OpsMind AI (Local Mode). System health is 98.4%. Please configure GROQ_API_KEY in Vercel.";
+          return "I'm currently in Local Mode. To enable full AI analysis, please configure the API Key in your Vercel Environment Variables.";
+        }
+        return `AI Error: ${data.error}`;
+      }
+
       return data.choices[0].message.content;
     } catch (error) {
+      console.error('Chat Error:', error);
       return "I'm having trouble connecting to the AI core. Reverting to local diagnostics.";
     }
   };
