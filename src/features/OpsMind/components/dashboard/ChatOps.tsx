@@ -16,17 +16,23 @@ export const ChatOps: React.FC = () => {
   const [input, setInput] = React.useState('');
   const [isTyping, setIsTyping] = React.useState(false);
 
-  const getAiResponse = async (userInput: string) => {
+  const getAiResponse = async (history: Message[]) => {
     const apiKey = import.meta.env.VITE_GROQ_API_KEY;
 
     // Fallback to Mock Logic if No API Key or Placeholder
     if (!apiKey || apiKey === "your_groq_api_key_here") {
-      const text = userInput.toLowerCase();
-      if (text.includes('hi') || text.includes('hello')) return "Hello! I'm OpsMind AI (Local Mode). System health is 98.4%. Configure VITE_GROQ_API_KEY for real AI.";
-      if (text.includes('status') || text.includes('health')) return "Global status is 'Optimal'. All nodes are operating within normal parameters.";
-      if (text.includes('logs') || text.includes('sure')) return "I've analyzed the logs for 'payment-api-prod'. I found minor latency on /checkout. Should I escalate?";
+      const lastInput = history[history.length - 1].text.toLowerCase();
+      if (lastInput.includes('hi') || lastInput.includes('hello')) return "Hello! I'm OpsMind AI (Local Mode). System health is 98.4%. Configure VITE_GROQ_API_KEY for real AI.";
+      if (lastInput.includes('status') || lastInput.includes('health')) return "Global status is 'Optimal'. All nodes are operating within normal parameters.";
+      if (lastInput.includes('logs') || lastInput.includes('sure')) return "I've analyzed the logs for 'payment-api-prod'. I found minor latency on /checkout. Should I escalate?";
       return "I'm currently in Local Mode. To enable full AI analysis with Groq, please configure your API Key in the environment settings.";
     }
+
+    // Convert history to Groq format
+    const apiMessages = history.map(msg => ({
+      role: msg.sender === 'user' ? 'user' : 'assistant',
+      content: msg.text
+    }));
 
     try {
       const response = await fetch("https://api.groq.com/openai/v1/chat/completions", {
@@ -40,18 +46,23 @@ export const ChatOps: React.FC = () => {
           messages: [
             {
               role: "system",
-              content: `You are OpsMind AI, a premium SRE assistant for the OpsMind Platform. 
+              content: `You are OpsMind AI, a premium and professional SRE assistant for the OpsMind Platform. 
               
               CURRENT PLATFORM CONTEXT:
               - System Status: Optimal (98.4% Health)
               - Active Nodes: 128 nodes online.
               - Recent Observation (1m ago): 'payment-api-prod' CPU usage spiked to 45%. Memory is stable at 65%. 
               - Latency: Increased p99 latency (145ms) detected on '/v1/checkout' endpoint.
-              - Infrastructure: All nodes in US-East-1 are healthy. Staging cluster is underutilized (2%).
+              - Infrastructure: All nodes in US-East-1 are healthy.
               
-              Your personality is professional, concise, and technical. When users ask for overviews or status, use the context above. Keep responses under 3 sentences.`
+              PERSONALITY & STYLE:
+              - Be professional, concise, and technical, but also conversational and helpful.
+              - Do NOT just repeat the status if it's not relevant to the user's specific question.
+              - If a user greets you, greet them back naturally.
+              - If asked for something off-topic (like a joke), you can comply briefly but stay in your "SRE persona" (e.g., make it a technical joke).
+              - Keep responses under 3 sentences unless a deep technical explanation is requested.`
             },
-            { role: "user", content: userInput }
+            ...apiMessages
           ],
           temperature: 0.7,
           max_tokens: 256
@@ -70,12 +81,14 @@ export const ChatOps: React.FC = () => {
     if (!input.trim()) return;
 
     const userMsg: Message = { id: Date.now(), text: input, sender: 'user', timestamp: new Date() };
-    setMessages(prev => [...prev, userMsg]);
+    const newMessages = [...messages, userMsg];
+    setMessages(newMessages);
+    
     const currentInput = input;
     setInput('');
     setIsTyping(true);
 
-    const aiResponseText = await getAiResponse(currentInput);
+    const aiResponseText = await getAiResponse(newMessages);
     
     const aiMsg: Message = { id: Date.now() + 1, text: aiResponseText, sender: 'ai', timestamp: new Date() };
     setMessages(prev => [...prev, aiMsg]);
