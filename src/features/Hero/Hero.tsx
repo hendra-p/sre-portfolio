@@ -1,7 +1,7 @@
 import React from 'react';
 import { usePortfolioService } from '../../contexts/PortfolioContext';
 import { Button } from '../../components/Button/Button';
-import { Terminal, Download, ArrowRight } from 'lucide-react';
+import { Download, ArrowRight } from 'lucide-react';
 
 export const Hero: React.FC = () => {
   const profile = usePortfolioService().getProfile();
