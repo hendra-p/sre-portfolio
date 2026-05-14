@@ -25,14 +25,23 @@ export const Skills: React.FC = () => {
                 <span className="w-8 h-1 bg-primary mr-3 rounded-full"></span>
                 {category}
               </h3>
-              <ul className="space-y-3">
-                {items.map((item, idx) => (
-                  <li key={idx} className="flex items-center text-textMuted group">
-                    <span className="w-1.5 h-1.5 rounded-full bg-slate-600 mr-3 group-hover:bg-primary transition-colors"></span>
-                    <span className="group-hover:text-textMain transition-colors">{item}</span>
-                  </li>
-                ))}
-              </ul>
+              <div className="flex flex-wrap gap-2">
+                {items.map((item, idx) => {
+                  const getCategoryStyles = (cat: string) => {
+                    const lowerCat = cat.toLowerCase();
+                    if (lowerCat.includes('infra') || lowerCat.includes('observability')) return 'text-primary bg-primary/10 border-primary/20';
+                    if (lowerCat.includes('devops') || lowerCat.includes('automation')) return 'text-success bg-success/10 border-success/20';
+                    if (lowerCat.includes('cloud') || lowerCat.includes('ai')) return 'text-warning bg-warning/10 border-warning/20';
+                    return 'text-textMuted bg-surface border-slate-700/50';
+                  };
+                  
+                  return (
+                    <span key={idx} className={`text-xs px-3 py-1.5 rounded-lg border font-medium transition-all hover:scale-105 ${getCategoryStyles(category)}`}>
+                      {item}
+                    </span>
+                  );
+                })}
+              </div>
             </CardContent>
           </Card>
         ))}

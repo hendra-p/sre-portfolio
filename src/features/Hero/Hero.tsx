@@ -14,9 +14,9 @@ export const Hero: React.FC = () => {
       
       <div className="container mx-auto px-6 md:px-12 lg:px-20 max-w-6xl relative z-10">
         <div className="max-w-3xl">
-          <div className="inline-flex items-center space-x-2 bg-surface/50 border border-slate-700/50 px-3 py-1 rounded-full text-primary text-sm font-medium mb-6">
-            <Terminal size={16} />
-            <span>System Status: Optimal</span>
+          <div className="inline-flex items-center space-x-2 bg-surface/50 border border-[#7c9fff33] px-3 py-1 rounded-full text-textMain text-sm font-medium mb-6">
+            <span className="w-2 h-2 rounded-full bg-success animate-pulse"></span>
+            <span className="font-mono">$ uptime: 99.98%</span>
           </div>
           
           <h1 className="text-5xl md:text-7xl font-bold text-textMain tracking-tight mb-4 leading-tight">

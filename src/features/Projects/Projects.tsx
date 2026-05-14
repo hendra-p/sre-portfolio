@@ -38,11 +38,27 @@ export const Projects: React.FC = () => {
                 <p className="text-textMain font-medium mb-6">{project.impact}</p>
                 
                 <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag, idx) => (
-                    <span key={idx} className="text-xs font-mono px-2.5 py-1 rounded bg-surface text-primary border border-slate-700">
-                      {tag}
-                    </span>
-                  ))}
+                  {project.tags.map((tag, idx) => {
+                    const getTagStyles = (tag: string) => {
+                      const lowerTag = tag.toLowerCase();
+                      if (lowerTag.includes('linux') || lowerTag.includes('infra') || lowerTag.includes('sre') || lowerTag.includes('middleware')) {
+                        return 'text-primary bg-primary/10 border-primary/20';
+                      }
+                      if (lowerTag.includes('terraform') || lowerTag.includes('iac') || lowerTag.includes('jenkins') || lowerTag.includes('pipeline') || lowerTag.includes('automation')) {
+                        return 'text-success bg-success/10 border-success/20';
+                      }
+                      if (lowerTag.includes('python') || lowerTag.includes('go') || lowerTag.includes('code') || lowerTag.includes('fastapi') || lowerTag.includes('sql') || lowerTag.includes('react') || lowerTag.includes('analysis')) {
+                        return 'text-warning bg-warning/10 border-warning/20';
+                      }
+                      return 'text-textMuted bg-surface border-slate-700';
+                    };
+
+                    return (
+                      <span key={idx} className={`text-xs font-mono px-2.5 py-1 rounded border ${getTagStyles(tag)}`}>
+                        {tag}
+                      </span>
+                    );
+                  })}
                 </div>
               </div>
             </CardContent>
