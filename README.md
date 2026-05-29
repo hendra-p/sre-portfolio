@@ -1,73 +1,84 @@
-# React + TypeScript + Vite
+# Hendra Prasetyo — Site Reliability Engineer Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[![Deployed on Vercel](https://img.shields.io/badge/Deployed%20on-Vercel-black?style=for-the-badge&logo=vercel)](https://sre-portfolio-livid.vercel.app)
+[![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](#)
+[![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)](#)
+[![Vite](https://img.shields.io/badge/Vite-646CFF?style=for-the-badge&logo=vite&logoColor=white)](#)
+[![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](#)
 
-Currently, two official plugins are available:
+Welcome to the repository of my personal SRE Portfolio website. This portfolio is designed to showcase my journey, skills, certifications, and hands-on case studies as a Site Reliability Engineer with over 7 years of experience in high-stakes financial technology environments, specifically at **PT Bank SMBC Indonesia**.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+🔗 **Live Site:** [sre-portfolio-livid.vercel.app](https://sre-portfolio-livid.vercel.app)  
+🔗 **LinkedIn:** [Hendra Prasetyo](https://www.linkedin.com/in/hendra-prasetyo)
 
-## React Compiler
+---
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 📷 Preview
 
-## Expanding the ESLint configuration
+[screenshot]
+*OpsMind AI Intelligence Platform Dashboard Preview*
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+## 🚀 Purpose
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+The goal of this portfolio is to bridge the gap between complex infrastructure engineering and modern frontend visualization. As an SRE, my day-to-day work involves scaling, securing, and maintaining highly available systems. This website acts as a hub to document my operational expertise, cloud architectural implementations, and to present interactive simulations of monitoring systems I design and run.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+## 🛠️ Features
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+- **Hero Section**: Sleek, high-impact introduction setting the tone for modern infrastructure and reliability engineering.
+- **About Me**: Brief background detailing my operational philosophy and my 7+ year journey at PT Bank SMBC Indonesia.
+- **Skills Directory**: Structured categorizations of my core technical competency (Cloud Architecture, CI/CD, Containerization, IaC, and Monitoring).
+- **Professional Experience**: Interactive timelines highlighting major achievements, scale metrics, and cost-reduction impact.
+- **Certifications**: Showcase of verified industry-standard credentials (AWS, Kubernetes, HashiCorp, etc.).
+- **Projects & Case Studies**: Real-world operational scenarios, system migrations, post-mortems, and root cause analysis documents.
+- **Live Demo (OpsMind AI)**: An interactive, premium cyber-industrial mock dashboard mimicking an infrastructure observability platform. Includes CPU/Memory graphs, anomaly alerts, system logs, and an AI-driven ChatOps interface.
+- **Contact**: Clean form and direct links for professional collaboration and inquiries.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+---
+
+## 💻 Tech Stack
+
+- **Framework**: [React](https://react.dev/) + [TypeScript](https://www.typescriptlang.org/) (Type-safe component design)
+- **Bundler**: [Vite](https://vite.dev/) (Ultra-fast Hot Module Replacement)
+- **Styling**: [Tailwind CSS](https://tailwindcss.com/) (Responsive layouts and design system implementation)
+- **Icons**: [Lucide React](https://lucide.dev/) (Consistent, minimal iconography)
+- **Charts**: [Recharts](https://recharts.org/) (Interactive telemetry visualizations inside the dashboard)
+- **Animation**: [Framer Motion](https://www.framer.com/motion/) (Smooth layout transitions and interactive micro-animations)
+
+---
+
+## ⚙️ Local Development
+
+To run this project locally, ensure you have [Node.js](https://nodejs.org/) installed, then follow these steps:
+
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/hendra-p/sre-portfolio.git
+   cd sre-portfolio
+   ```
+
+2. **Install dependencies:**
+   ```bash
+   npm install
+   ```
+
+3. **Start the development server:**
+   ```bash
+   npm run dev
+   ```
+
+4. **Open in browser:**
+   Open your browser and navigate to `http://localhost:5173` (or the address provided in your terminal).
+
+---
+
+## 📬 Contact & Connect
+
+- **Name**: Hendra Prasetyo
+- **Role**: Site Reliability Engineer (7+ years experience at PT Bank SMBC Indonesia)
+- **LinkedIn**: [Hendra Prasetyo](https://www.linkedin.com/in/hendra-prasetyo)
+- **Portfolio**: [sre-portfolio-livid.vercel.app](https://sre-portfolio-livid.vercel.app)
+- **GitHub**: [@hendra-p](https://github.com/hendra-p)
