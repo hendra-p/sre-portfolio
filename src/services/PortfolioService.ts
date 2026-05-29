@@ -83,7 +83,8 @@ const MOCK_DATA: PortfolioData = {
       problem: 'Debugging production issues took hours due to scattered server logs.',
       solution: 'Implemented a robust pipeline using standard log shippers and custom Python parsers to feed metrics into a centralized monitoring system.',
       impact: 'Decreased anomaly detection time from 45 minutes to under 5 minutes.',
-      tags: ['Linux', 'Python', 'Log Analysis']
+      tags: ['Linux', 'Python', 'Log Analysis'],
+      architectureDiagram: 'App Servers → Log Shipper (Filebeat) → Python Parser → Elasticsearch → Grafana Dashboard → Alert (Email/Slack)'
     },
     {
       id: 'proj2',
@@ -92,7 +93,8 @@ const MOCK_DATA: PortfolioData = {
       problem: 'Intermittent API timeouts caused transaction drops during peak hours.',
       solution: 'Analyzed middleware bottlenecks, tuned connection pools, and established strict retry policies.',
       impact: 'Zero transaction drops during the following peak season, ensuring high reliability for customer funds.',
-      tags: ['Middleware', 'API', 'Troubleshooting', 'SQL']
+      tags: ['Middleware', 'API', 'Troubleshooting', 'SQL'],
+      architectureDiagram: 'Core Banking → Middleware → BIFAST API → Retry Policy → Monitoring (Grafana) → Alert'
     },
     {
       id: 'proj3',

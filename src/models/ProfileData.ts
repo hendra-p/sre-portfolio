@@ -22,6 +22,7 @@ export interface Project {
   tags: string[];
   hasLiveDemo?: boolean;
   demoSectionId?: string;
+  architectureDiagram?: string;
 }
 
 export interface Certification {

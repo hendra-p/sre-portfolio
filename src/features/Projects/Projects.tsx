@@ -31,6 +31,24 @@ export const Projects: React.FC = () => {
                   </div>
                   <p className="text-sm text-textMuted bg-slate-800/50 p-3 rounded border border-slate-700/50">{project.solution}</p>
                 </div>
+                
+                {project.architectureDiagram && (
+                  <div>
+                    <div className="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2">Architecture Flow</div>
+                    <div className="flex flex-wrap items-center gap-2 bg-slate-800/30 p-3 rounded border border-slate-700/50">
+                      {project.architectureDiagram.split(' → ').map((step, index, array) => (
+                        <React.Fragment key={index}>
+                          <div className="px-2.5 py-1.5 bg-slate-800 text-xs text-textMain rounded border border-slate-700 font-medium shadow-sm">
+                            {step}
+                          </div>
+                          {index < array.length - 1 && (
+                            <span className="text-primary text-xs font-bold shrink-0">→</span>
+                          )}
+                        </React.Fragment>
+                      ))}
+                    </div>
+                  </div>
+                )}
               </div>
               
               <div className="mt-auto pt-6 border-t border-slate-700/50">
