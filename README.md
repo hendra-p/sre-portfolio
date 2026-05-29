@@ -32,7 +32,7 @@ The goal of this portfolio is to bridge the gap between complex infrastructure e
 - **About Me**: Brief background detailing my operational philosophy and my 7+ year journey at PT Bank SMBC Indonesia.
 - **Skills Directory**: Structured categorizations of my core technical competency (Cloud Architecture, CI/CD, Containerization, IaC, and Monitoring).
 - **Professional Experience**: Interactive timelines highlighting major achievements, scale metrics, and cost-reduction impact.
-- **Certifications**: Showcase of verified industry-standard credentials (AWS, Kubernetes, HashiCorp, etc.).
+- **Certifications**: Verified credentials from Dicoding Indonesia and Microsoft Azure covering Data Science, AI, Machine Learning, and Cloud technologies.
 - **Projects & Case Studies**: Real-world operational scenarios, system migrations, post-mortems, and root cause analysis documents.
 - **Live Demo (OpsMind AI)**: An interactive, premium cyber-industrial mock dashboard mimicking an infrastructure observability platform. Includes CPU/Memory graphs, anomaly alerts, system logs, and an AI-driven ChatOps interface.
 - **Contact**: Clean form and direct links for professional collaboration and inquiries.

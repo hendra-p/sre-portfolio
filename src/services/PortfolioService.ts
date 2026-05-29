@@ -109,17 +109,13 @@ const MOCK_DATA: PortfolioData = {
     }
   ],
   certifications: [
-    { name: 'Microsoft Certified: Fabric Analytics Engineer Associate', issuer: 'Dicoding Indonesia', year: '2026' },
-    { name: 'Microsoft Certified: Azure AI Fundamentals', issuer: 'Dicoding Indonesia', year: '2026' },
-    { name: 'Applied Data Science with Microsoft Fabric', issuer: 'Dicoding Indonesia', year: '2026' },
-    { name: 'Generative AI Application Development with Microsoft Azure', issuer: 'Dicoding Indonesia', year: '2026' },
-    { name: 'Data Processing Fundamentals', issuer: 'Dicoding Indonesia', year: '2026' },
-    { name: 'Machine Learning for Beginners', issuer: 'Dicoding Indonesia', year: '2026' },
-    { name: 'Python Programming Fundamentals', issuer: 'Dicoding Indonesia', year: '2025' },
-    { name: 'SQL Fundamentals', issuer: 'Dicoding Indonesia', year: '2025' },
-    { name: 'Fundamentals of Data Science', issuer: 'Dicoding Indonesia', year: '2025' },
-    { name: 'Fundamentals of AI', issuer: 'Dicoding Indonesia', year: '2025' },
-    { name: 'Discover AI in Daily Life', issuer: 'Google', year: '2025' }
+    { name: 'Applied Data Science with Microsoft Fabric', issuer: 'Dicoding Indonesia', year: '2025' },
+    { name: 'Generative AI Application Development with Microsoft Azure', issuer: 'Dicoding Indonesia', year: '2025' },
+    { name: 'Data Processing Fundamentals', issuer: 'Dicoding Indonesia', year: '2025' },
+    { name: 'Machine Learning for Beginners', issuer: 'Dicoding Indonesia', year: '2025' },
+    { name: 'Fundamentals of Structured Query Language (SQL)', issuer: 'Dicoding Indonesia', year: '2025' },
+    { name: 'Fundamentals of Artificial Intelligence (AI)', issuer: 'Dicoding Indonesia', year: '2025' },
+    { name: 'Fundamentals of Data Science', issuer: 'Dicoding Indonesia', year: '2025' }
   ]
 };
 
