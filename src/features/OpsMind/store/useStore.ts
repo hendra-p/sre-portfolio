@@ -12,11 +12,13 @@ interface AppState {
   alerts: any[];
   
   activePage: string;
+  sidebarOpen: boolean;
   setUser: (user: User | null) => void;
   setSelectedNodeId: (id: number | null) => void;
   setNodes: (nodes: any[]) => void;
   setAlerts: (alerts: any[]) => void;
   setActivePage: (page: string) => void;
+  setSidebarOpen: (open: boolean) => void;
 }
 
 export const useStore = create<AppState>((set) => ({
@@ -25,10 +27,12 @@ export const useStore = create<AppState>((set) => ({
   nodes: [],
   alerts: [],
   activePage: 'overview',
+  sidebarOpen: false,
   
   setUser: (user) => set({ user }),
   setSelectedNodeId: (id) => set({ selectedNodeId: id }),
   setNodes: (nodes) => set({ nodes }),
   setAlerts: (alerts) => set({ alerts }),
   setActivePage: (page) => set({ activePage: page }),
+  setSidebarOpen: (open) => set({ sidebarOpen: open }),
 }));

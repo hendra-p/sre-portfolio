@@ -33,36 +33,61 @@ const navItems = [
 import { useStore } from '../../store/useStore';
 
 export const Sidebar: React.FC = () => {
-  const { activePage, setActivePage } = useStore();
+  const { activePage, setActivePage, sidebarOpen, setSidebarOpen } = useStore();
 
   return (
-    <div className="w-64 h-screen bg-card border-r border-white/5 flex flex-col p-4">
-      <div className="flex items-center gap-3 mb-8 px-2">
-        <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
-          <BrainCircuit className="text-background w-5 h-5" />
-        </div>
-        <span className="text-xl font-bold tracking-tight">OpsMind <span className="text-primary">AI</span></span>
-      </div>
+    <>
+      {/* Mobile Backdrop */}
+      {sidebarOpen && (
+        <div 
+          className="absolute inset-0 bg-background/80 backdrop-blur-sm z-40 lg:hidden"
+          onClick={() => setSidebarOpen(false)}
+        />
+      )}
 
-      <nav className="flex-1 space-y-1">
-        {navItems.map((item) => (
-          <button
-            key={item.id}
-            onClick={() => setActivePage(item.id)}
-            className={cn(
-              "w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 group",
-              activePage === item.id 
-                ? "bg-primary/10 text-primary" 
-                : "text-white/60 hover:bg-white/5 hover:text-white"
-            )}
+      <div className={cn(
+        "w-64 h-full bg-card border-r border-white/5 flex flex-col p-4 z-50",
+        "absolute inset-y-0 left-0 transform transition-transform duration-300 ease-in-out lg:translate-x-0 lg:static",
+        sidebarOpen ? "translate-x-0" : "-translate-x-full"
+      )}>
+        <div className="flex items-center justify-between mb-8 px-2">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center">
+              <BrainCircuit className="text-background w-5 h-5" />
+            </div>
+            <span className="text-xl font-bold tracking-tight">OpsMind <span className="text-primary">AI</span></span>
+          </div>
+          {/* Close button for mobile */}
+          <button 
+            onClick={() => setSidebarOpen(false)}
+            className="lg:hidden text-white/60 hover:text-white p-1"
           >
-            <item.icon className={cn("w-5 h-5", activePage === item.id ? "text-primary" : "text-white/60")} />
-            <span className="font-medium flex-1 text-left">{item.label}</span>
-            {activePage === item.id && <ChevronRight className="w-4 h-4" />}
+            ✕
           </button>
-        ))}
-      </nav>
+        </div>
 
-    </div>
+        <nav className="flex-1 space-y-1 overflow-y-auto">
+          {navItems.map((item) => (
+            <button
+              key={item.id}
+              onClick={() => {
+                setActivePage(item.id);
+                setSidebarOpen(false);
+              }}
+              className={cn(
+                "w-full flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-200 group",
+                activePage === item.id 
+                  ? "bg-primary/10 text-primary" 
+                  : "text-white/60 hover:bg-white/5 hover:text-white"
+              )}
+            >
+              <item.icon className={cn("w-5 h-5", activePage === item.id ? "text-primary" : "text-white/60")} />
+              <span className="font-medium flex-1 text-left">{item.label}</span>
+              {activePage === item.id && <ChevronRight className="w-4 h-4" />}
+            </button>
+          ))}
+        </nav>
+      </div>
+    </>
   );
 };

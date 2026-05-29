@@ -1,9 +1,11 @@
 import React from 'react';
-import { Bell, Search } from 'lucide-react';
+import { Bell, Search, Menu } from 'lucide-react';
+import { useStore } from '../../store/useStore';
 
 import { motion, AnimatePresence } from 'framer-motion';
 
 export const Header: React.FC = () => {
+  const { setSidebarOpen } = useStore();
   const [showNotifications, setShowNotifications] = React.useState(false);
   const [notifications, setNotifications] = React.useState([
     { id: 1, text: 'Critical: CPU spike on payment-api', time: '2m ago', type: 'error' },
@@ -16,13 +18,19 @@ export const Header: React.FC = () => {
   };
 
   return (
-    <header className="h-16 border-b border-white/5 flex items-center justify-between px-8 bg-card/30 backdrop-blur-sm sticky top-0 z-50">
+    <header className="h-16 border-b border-white/5 flex items-center justify-between px-4 lg:px-8 bg-card/30 backdrop-blur-sm sticky top-0 z-50">
       <div className="flex items-center gap-4 flex-1">
-        <div className="relative w-96">
+        <button 
+          onClick={() => setSidebarOpen(true)}
+          className="lg:hidden p-1.5 rounded-lg hover:bg-white/5 text-white/80 hover:text-white transition-colors shrink-0"
+        >
+          <Menu className="w-5 h-5" />
+        </button>
+        <div className="relative w-full max-w-[200px] sm:max-w-96">
           <Search className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-white/40" />
           <input 
             type="text" 
-            placeholder="Search nodes, metrics, or incidents..."
+            placeholder="Search..."
             className="w-full bg-white/5 border border-white/10 rounded-lg pl-10 pr-4 py-2 text-sm focus:outline-none focus:border-primary/50 transition-all"
           />
         </div>
