@@ -44,12 +44,13 @@ const MOCK_DATA: PortfolioData = {
       company: 'PT Bank SMBC Indonesia Tbk',
       period: 'May 2024 – Present',
       responsibilities: [
-        'Designed and managed end-to-end monitoring systems using SolarWinds, Elasticsearch, and Grafana for real-time visibility across 100+ servers and business-critical applications.',
-        'Leveraged Jenkins CI/CD to automate deployment of monitoring configurations and recovery scripts for consistent, scalable infrastructure changes, reducing manual deployment effort by ~60%.',
-        'Developed Python and Bash automation scripts for proactive anomaly detection, significantly reducing manual operational toil.',
-        'Visualized system performance metrics through Tableau to drive data-driven infrastructure capacity planning for management.'
+        'Built an end-to-end observability stack using SolarWinds, Elasticsearch, and Grafana for real-time visibility across 100+ servers and business-critical banking applications.',
+        'Automated monitoring config deployments through Jenkins CI/CD pipelines, cutting manual deployment effort by ~60% while keeping changes consistent and version-controlled.',
+        'Wrote Python and Bash detection scripts that reduced mean-time-to-detect (MTTD) by ~40%, shifting the team from reactive firefighting to catching issues before they escalate.',
+        'Built Tableau dashboards for capacity planning, giving management clear visibility into resource utilization and production trends.',
+        'Led technical response during P1 incidents, achieving MTTR under 30 minutes with zero SLA breaches across all critical incidents in 2024.'
       ],
-      impact: 'Reduced operational toil by ~40% through automation. Zero SLA breach in 2024 across all P1 incidents.'
+      impact: 'Cut operational toil by ~40% through automation. Zero SLA breaches in 2024 across all P1 incidents.'
     },
     {
       id: 'exp2',
@@ -57,11 +58,15 @@ const MOCK_DATA: PortfolioData = {
       company: 'PT Bank SMBC Indonesia Tbk',
       period: 'August 2020 – Present',
       responsibilities: [
-        'Resolved complex incident tickets via ServiceNow and Jira, performing deep-dive log analysis to identify and remediate root causes.',
-        'Executed complex SQL queries for data remediation and technical reporting for business stakeholders.',
-        'Operated AS400 Core Banking systems to support seamless daily banking operations.'
+        'Handled complex incident and problem tickets in ServiceNow and Jira; ran root cause analysis on app logs for 50+ recurring production issues.',
+        'Diagnosed and resolved system issues through deep troubleshooting and log analysis, documenting each fix in Confluence to build a reusable knowledge base.',
+        'Worked closely with Business Analysts, QA teams, and vendors to catch problems before production; involved in UAT cycles.',
+        'Monitored system integrations across Grafana, ELK, API logs, and middleware platforms — proactively surfacing errors before they hit end users.',
+        'Ran advanced SQL queries for data fixes, issue diagnosis, and technical reporting to business stakeholders.',
+        'Administered AS400 Core Banking systems and maintained documentation in Confluence and Jira.',
+        'Part of the 24/7 on-call rotation for critical incidents and emergency response in banking operations.'
       ],
-      impact: 'Resolved 50+ recurring production issues through deep-dive RCA, improving system stability and reducing repeat incidents.'
+      impact: 'Resolved 50+ recurring production issues through deep-dive root cause analysis, reducing repeat incidents and improving overall system stability.'
     },
     {
       id: 'exp3',
@@ -69,8 +74,8 @@ const MOCK_DATA: PortfolioData = {
       company: 'PT Bank SMBC Indonesia Tbk',
       period: 'August 2018 – August 2020',
       responsibilities: [
-        'Handled initial incident response, service restarts, and basic error log analysis as first-line support.',
-        'Supported the ITCCMS system to verify ATM card linkages and ensure backend data accuracy.'
+        'Handled first-line incident response — service restarts, error log checks, and initial triage for production alerts.',
+        'Supported the ITCCMS system to verify ATM card linkages and ensure backend data accuracy for card operations.'
       ],
       impact: 'Delivered reliable first-line support for banking operations, building strong incident management fundamentals.'
     }
