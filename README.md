@@ -9,7 +9,7 @@
 Welcome to the repository of my personal SRE Portfolio website. This portfolio is designed to showcase my journey, skills, certifications, and hands-on case studies as a Site Reliability Engineer with over 7 years of experience in high-stakes financial technology environments, specifically at **PT Bank SMBC Indonesia**.
 
 🔗 **Live Site:** [sre-portfolio-livid.vercel.app](https://sre-portfolio-livid.vercel.app)  
-🔗 **LinkedIn:** [Hendra Prasetyo](https://www.linkedin.com/in/hendra-prasetyo)
+🔗 **LinkedIn:** [Hendra Prasetyo](https://www.linkedin.com/in/hendra-prasetyoo/)
 
 ---
 
@@ -79,6 +79,6 @@ To run this project locally, ensure you have [Node.js](https://nodejs.org/) inst
 
 - **Name**: Hendra Prasetyo
 - **Role**: Site Reliability Engineer (7+ years experience at PT Bank SMBC Indonesia)
-- **LinkedIn**: [Hendra Prasetyo](https://www.linkedin.com/in/hendra-prasetyo)
+- **LinkedIn**: [Hendra Prasetyo](https://www.linkedin.com/in/hendra-prasetyoo/)
 - **Portfolio**: [sre-portfolio-livid.vercel.app](https://sre-portfolio-livid.vercel.app)
 - **GitHub**: [@hendra-p](https://github.com/hendra-p)
